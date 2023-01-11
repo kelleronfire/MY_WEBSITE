@@ -1,0 +1,30 @@
+h1{
+	color: black;
+}
+
+* {
+
+text-align: center;
+
+}
+
+div{
+	color: black;
+	inline-size: 800px;
+	display: inline-block;
+	text-align: left;
+}
+
+span{
+	font-size: 1.2em;
+}
+
+p{
+	width: 800px;
+	
+}
+
+div2{
+	display: inline-block;
+	inline-size: 800px;
+}
