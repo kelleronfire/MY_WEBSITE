@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+
+<link rel="stylesheet" type="text/css" href="a_dashboard_style.css">
+<h1><center> Kalboard 360 Online Learning </center></h1>
+<div> The data is taken from the website “kaggle.com” which provides access to many different data sets, one of
+which, including this dataset of an online learning service called ‘Kalboard 360’. This service measures many
+different metrics as the students learn through a variety of online classes. There are 480 observations in this
+data set.</div>
+
+<p><div>
+<span><b>Variables:</b></span><br>
+- ParentschoolSatisfaction<br>
+- AnnouncementsView<br>
+- Discussion<br>
+- raisedhands<br>
+- Class<br>
+- StudentAbsenceDays<br>
+</div></p>
+
+<div>
+<b>ParentschoolSatisfaction</b> - The satisfaction of the parent of the learning service measured with response ‘yes’,
+‘no’.<br>
+<b>AnnouncementsView</b> - A measure of how many times the student views class announcements measured 0-100<br>
+<b>Discussion</b> - The amount of times the student participates in discussion measured 0-100<br>
+<b>Raisedhands</b> - The number of times a student raises their hand. 0-100<br>
+<b>StudentAbsenceDays</b> - The number of days a student is absent. This is measured by two groupings ‘Under-7’,
+‘Above-7’<br>
+<b>Class</b> - A categorical grouping of the students based on their performance in the class. Low-Level: interval
+includes values from 0 to 69, Middle-Level: interval includes values from 70 to 89, High-Level: interval
+includes values from 90-100.<br>
+</div>
+
+
+
+<p><div>
+<span><b>Conceptual Questions:</b></span>
+<br><b>-Does the amount of participation in the virtual classroom effect the amount of times a student will examine announcements?</b>
+<br><b>-Does greater student involvment relate to greater parent satiscation of the program?</b>
+</div></p>
+
+<p><div>
+we will start by producing a linear model predicting announcement views from raised hands, Disucssion, and class
+</div></p>
+
+<p><code><div>
+y_linearmodel <- lm(AnnouncementsView ~ raisedhands + Discussion + Class, data = ProjectData)<br>
+summary(my_linearmodel)
+</div></code></p>
+
+<p><code><div>
+## Call:<br>
+## lm(formula = AnnouncementsView ~ raisedhands + Discussion + Class,<br>
+## data = ProjectData)<br>
+##<br>
+## Residuals:<br>
+## Min 1Q Median 3Q Max<br>
+## -66.449 -12.659 -0.693 13.189 62.081<br>
+##<br>
+## Coefficients:<br>
+## Estimate Std. Error t value Pr(>|t|)<br>
+## (Intercept) 14.72550 3.37489 4.363 1.57e-05 ***<br>
+## <b>raisedhands</b> 0.39701 0.03846 10.323 < 2e-16 ***<br>
+## <b>Discussion</b>  0.20032 0.03415 5.866 8.38e-09 ***<br>
+## <b>ClassL</b>  &nbsp&nbsp  -12.03283 3.12383 -3.852 0.000133 ***<br>
+## <b>ClassM</b> &nbsp&nbsp -1.96466 2.24984 -0.873 0.382971<br>
+## ---<br>
+## Signif. codes: 0 ’***’ 0.001 ’**’ 0.01 ’*’ 0.05 ’.’ 0.1 ’ ’ 1<br>
+##<br>
+## Residual standard error: 19.28 on 475 degrees of freedom<br>
+## Multiple R-squared: 0.4794, Adjusted R-squared: 0.4751<br>
+## F-statistic: 109.4 on 4 and 475 DF, p-value: < 2.2e-16<br>
+</div></code></p>
+
+<p><div>
+<b>Interpretation of Coefficents:</b> Holding all other variables constant increasing raisedhands by one on average increases the announcement view by 0.39701. The same is respectivly true for Discussion, on average increasing announcement views by 0.20032, and
+class being == 'low' on average decreasing announcement views by -12.03283. As well as class == 'med' on average decreasing it by -1.96466. 
+</p></div>
+
+<p><div>
+In relation to the first conceptual question as to whether participation affects the average announcement views. It appears that both forms of participation have minimal positive effects on the announcementviews. The variable Class, however appears to have a much greater impact on announcementviews. More specifically ClassM is not significant which makes sense as those are students that are passing the class. ClassL is only students with failing grades and so it would make sense for this to drastically effect the average announcement views.
+So far through our first glance it appears that whether or not a student is failing is the greatest indicator on how often a student looks at the announcements.
+</div><p>
+
+<h1><center>
+Checking Assumptions of the Linear Model
+</h1></center>
+
+<p><div><code>
+# This is the qqplot<btr>
+qqplot <- ggplot(mapping = aes(sample = (my_linearmodel$residuals))) + geom_qq() + geom_qq_line()<br>
+qqplot
+</code></div></p>
+
+<div2>
+<img src="the_qqplot" alt="This is the qqplot">
+<p> This is text for the qqplot lots of great observations to be had </p>
+<img src="the_boxplot" alt="This is the boxplot">
+<img src="the_resid_plot" alt="This is the resid plot">
+<p> The data appears on the qq-plot to pass the assumption of linearity however, upon further investigation when
+the residuals are plotted against the fitted values you can see that the data vaguely resembles a cone opening
+to the right. Ideally the data is randomlly scattered around zero. This however is not the case. Taking
+a closer look at a boxplots across the categorical variables of ‘class’ we can see the distribution between
+‘ClassH’,‘ClassM’ and ‘ClassL’. The variance of ‘ClassL’ differes leading to a failure of the assumption of
+homoscedacity i.e the variance among residuals of the groups compared is not the same.</p>
+
+<p>
+When looking at the adjusted Rˆ2 of the model we can see that the model explains 47.51 % of the variation
+in the outcome.
+</p>
+</div2>
+
+
+<h2><center>
+<b>A Logistic Regression Predicting Parent Satisfaction</b>
+</center></h2>
+
+
+<p><div>
+##<br>
+## Call:<br>
+## glm(formula = Satisfaction ~ raisedhands + Discussion, family = binomial,<br>
+## data = ProjectDataLOG)<br>
+##<br>
+## Deviance Residuals:<br>
+## Min 1Q Median 3Q Max<br>
+## -1.9197 -1.1066 0.7034 0.9126 1.4756<br>
+##<br>
+## Coefficients:<br>
+## Estimate Std. Error z value Pr(>|z|)<br>
+## (Intercept) -0.385521 0.202363 -1.905 0.0568 .<br>
+## raisedhands 0.022021 0.003521 6.253 4.02e-10 ***<br>
+## Discussion -0.003659 0.003807 -0.961 0.3365<br>
+## ---<br>
+## Signif. codes: 0 ’***’ 0.001 ’**’ 0.01 ’*’ 0.05 ’.’ 0.1 ’ ’ 1<br>
+##<br>
+## (Dispersion parameter for binomial family taken to be 1)<br>
+##<br>
+## Null deviance: 642.71 on 479 degrees of freedom<br>
+## Residual deviance: 598.30 on 477 degrees of freedom<br>
+## AIC: 604.3<br>
+##<br>
+## Number of Fisher Scoring iterations: 4<br>
+</div></p>
+
+<div2>
+<img src="AUCPLOT1" alt="This is an AUCPLOT1">
+<p>
+The sensitivity of the model is 75.68493 % and the specificity is 46.2766 % The AUC is 0.6098076. Just
+by looking at the ROC curve we can see that this model does not do that great of a job of predicting
+parentschoolSatisfaction but does to some extent. The variable Discussion does not appear to be a significant
+predictor, While it appears most of the explaining is done by raisedhands. This would leave me to believe
+that raisedhands could have some play in effecting ParentschoolSatisfaction.
+</p>
+</div2>
+
+<h2><center>
+<b>A Logistic Regression Predicting Parent Satisfaction with a Testing Training Split</b>
+</center></h2>
+
+<p><div>
+##<br>
+## Call:<br>
+## glm(formula = Satisfaction ~ raisedhands + Discussion, family = binomial,<br>
+## data = data_train)<br>
+##<br>
+## Deviance Residuals:<br>
+## Min 1Q Median 3Q Max<br>
+## -1.8645 -1.1586 0.7344 0.9198 1.4202<br>
+##<br>
+## Coefficients:<br>
+## Estimate Std. Error z value Pr(>|z|)<br>
+## (Intercept) -0.362017 0.243005 -1.490 0.136<br>
+## raisedhands 0.020030 0.004198 4.772 1.82e-06 ***<br>
+## Discussion -0.002408 0.004675 -0.515 0.606<br>
+## ---<br>
+## Signif. codes: 0 ’***’ 0.001 ’**’ 0.01 ’*’ 0.05 ’.’ 0.1 ’ ’ 1<br>
+##<br>
+## (Dispersion parameter for binomial family taken to be 1)<br>
+##<br>
+## Null deviance: 449.36 on 335 degrees of freedom<br>
+## Residual deviance: 423.18 on 333 degrees of freedom<br>
+## AIC: 429.18<br>
+##<br>
+## Number of Fisher Scoring iterations: 4<br>
+</p></div>
+<br>
+<div2>
+<img src="AUCPLOT2"alt="This is an AUCPLOT2">
+<p>
+The sensitivity of the model is 77.01149 % and the specificity is 56.14035 % The AUC is 0.6657592. Using
+the testing/training set increased the AUC but produced very similar results
+</p>
+</div2>
+
+<h2><center>
+<b>PCA and Clustering</b>
+</center></h2>
+
+<p><div>
+## Standard deviations (1, .., p=3):<br>
+## [1] 1.3953031 0.8391102 0.5907821<br>
+##<br>
+## Rotation (n x k) = (3 x 3):<br>
+## PC1 PC2 PC3<br>
+## AnnouncementsView 0.6272915 -0.2502233 0.7374915<br>
+## Discussion 0.4926423 0.8609259 -0.1269256<br>
+## raisedhands 0.6031658 -0.4429389 -0.6633221<br>
+</div></p>
+
+<div2>
+<img src="PCA1"alt="this is PCA1">
+<p>
+Holding all other variables constant and increasing discussion will have a near equal effect on both the
+principle componets. This however is not the case for the AnnouncementsView and raisedhands as these only
+seem to marginally effect the second principle componet and greatly so effect the first principle componet.
+</p>
+</div2>
+<br>
+<div2>
+<img src="elbowplot"alt="this is an elbowplot">
+<p>
+The elbow plot appears to start its linear decent somewhere between 5 and 2 clusters. This is indicative of
+the number of k-means clusters. Based upon the fact that the higher number of clusters became too hard to
+interpret graphically I decided to settle with 3 clusters.
+</p>
+</div2>
+
+<br>
+
+<div2>
+<img src="PCA2"alt="this is PCA2">
+<p>
+Through graphical examination it does appear that clusters are somewhat predictive of my binary feature
+of ParentSatisfaction. Clusters 3 and 1 definitly contain mainly ‘Good’ or ‘Bad’ while the center cluster 2
+appears to be mainly ‘Good’ but with more ‘Bad’ mixed in then cluster 3. I suspect that ‘Class’ would be
+predicted much more effectivly by the clusters.
+</p>
+</div2>
+
+<br>
+
+<div2>
+<img src="AUC3"alt="this is AUC3">
+<p>
+The sensitivity of the model is 78.16092 % while the specificity is 54.38596 % The AUC is 0.6627344. Using
+the principle componets did slightly increase the AUC and both predictors were significant in the model
+as opposed to one. The reason this performed better is that the dimensionality reduction simplified the
+dataset removing extraneous variables allowing it to perform better. This could happen because the first two
+principle componets together explained a large enough portion of data that when the rest of the principle
+componets were dropped the model still performed better.
+</p>
+</div2>
