@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html>
 
-<header id = "header">
+<div class="header" id = "myheader">
   <link rel="stylesheet" type="text/css" href="style.css">
 
-  <h1>Charles Keller Munroe</h1>
-  <h4>charles.munroe49613@gmail.com</h4>
+  
   <p><a href="Index.html">HOME</p>
   <p><a href="https://github.com/kelleronfire">GITHUB</p>
   <p><a href="Portfolio.html">DASHBOARDS</p>
@@ -18,10 +17,11 @@
 	<a href="#Skills_Expertise">Skills_Expertise</a>
 	
   </nav>
-  </header>
+  </div>
   
   <section id = "Home">
-   <h1>With self-discipline most anything is possible. - Theodore Roosevelt</h1>
+   <img src="CHarles Munroe (1).jpg" style="position:centered; margin-top:230px;"
+   alt="logo" width = "300" height = "300" >
   </section>
   
   <section id = "About">
@@ -36,35 +36,30 @@
   <section id = "Skills_Expertise">
     <h1>Skills Expertise</h1>
 	
-	<p>HTML</p>
-<div class="container">
-  <div class="skills html">50%</div>
-</div>
 
-<p>CSS</p>
-<div class="container">
-  <div class="skills css">50%</div>
-  
-	<p>R</p>
-<div class="container">
-  <div class="skills R">85%</div>
-</div>
-
-<p>Python</p>
-<div class="container">
-  <div class="skills Python">70%</div>
-</div>
-</div>
-	
-	
-	
-	
-	
-	
-	
-	
-	
   </section>
+
+<script>
+// When the user scrolls the page, execute myFunction
+window.onscroll = function() {myFunction()};
+
+// Get the header
+var header = document.getElementById("myheader");
+
+// Get the offset position of the navbar
+var sticky = header.offsetTop;
+
+// Add the sticky class to the header when you reach its scroll position. Remove "sticky" when you leave the scroll position
+function myFunction() {
+  if (window.pageYOffset > sticky) {
+    header.classList.add("sticky");
+  } else {
+    header.classList.remove("sticky");
+  }
+}
+</script>
+
+
 
 
 

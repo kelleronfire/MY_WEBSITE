@@ -2,6 +2,7 @@
 
 h1 { margin-top: 0;
      font-size: 35px;
+	 padding:5px;
 color:white;
 text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
 }
@@ -12,8 +13,8 @@ text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
 padding: 5px;
 }
 
-nav {margin-top: -30px;
-	padding: 5px;
+nav {margin-top: 7px;
+	padding: 10px;
 	word-spacing: 5px;
 	}
 
@@ -31,21 +32,24 @@ body{
 	color: black;
   }
 
-#header{
-	height: 110px;
-	background-color: #347ab1;
+#myheader{
+	height: 75px;
+	background-color: #38b6ff;
+	z-index: 9001;
 }
 
 p{
 	position: relative;
-	bottom: 30px;
+	top: 10px;
+	
 	display: inline;
-	padding: 5px;
+	padding: 10px;
 }
 
 
+
 #Home{
-	height: 1300px;
+	height: 900px;
 }
 
 #About,
@@ -56,20 +60,22 @@ p{
 }
   
 #Home{
-	background-image: url("Highline.jpg"), linear-gradient(0deg, black,black);
+	background: linear-gradient(0deg, #38b6ff,#38b6ff);
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-position: center;
-	background-size: contain;
+	background-size: cover;
 	margin:0px;
 	text-align: center;
+	
+	
 	
 	
 }
 
  
 #About{
-	background: linear-gradient(0deg, #a5d2f7,#78bdf4 );
+	background: linear-gradient(0deg, #a5d2f7,#38b6ff);
 	margin:0px;
 	padding:25px;
 	margin-top: 0px;
@@ -86,23 +92,66 @@ p{
 }
 
 
-/* Make sure that padding behaves as expected */
-* {box-sizing:border-box}
 
-/* Container for skill bars */
+
+/* The following is to make the nav links light up when hovered over */
+
+
+body,
+html {
+  
+  font-family: sans-serif;
+}
+
 .container {
-  width: 100%; /* Full width */
-  background-color: ##cfe7f9; /* Grey background */
+  display: flex;
+  gap: 0.625%;
 }
 
-.skills {
-  text-align: right; /* Right-align text */
-  padding-top: 10px; /* Add top padding */
-  padding-bottom: 10px; /* Add bottom padding */
-  color: black;                  
+a {
+  flex: 1;
+  text-decoration: none;
+  outline: none;
+  text-align: center;
+  line-height: 1;
+  color: black;
 }
 
-.html {width: 50%; background-color: #04AA6D;} /* Green */
-.css {width: 50%; background-color: #2196F3;} /* Blue */
-.R{width: 85%; background-color: #04AA6D;} /* Green */
-.Python{width: 70%; background-color: #2196F3;} /* Blue */
+a:link,
+a:visited,
+a:focus {
+  background: #38b6ff;
+  color: black;
+}
+
+a:hover {
+  background: orange;
+}
+
+a:active {
+  background: darkred;
+  color: white;
+}
+
+
+
+
+/* the above is to make the navlinks light up when hovered */
+
+
+
+
+
+
+/* The sticky class is added to the header with JS when it reaches its scroll position */
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%
+}
+
+/* Add some top padding to the page content to prevent sudden quick movement (as the header gets a new position at the top of the page (position:fixed and top:0) */
+.sticky + .content {
+  padding-top: 102px;
+}
+
