@@ -13,9 +13,14 @@ text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
 padding: 5px;
 }
 
-nav {margin-top: 7px;
+nav {top: 35px;
 	padding: 10px;
-	word-spacing: 5px;
+	word-spacing: 22px;
+	letter-spacing: -1px;
+	font-family:Courier New;
+	display: inline;
+	position: relative;
+	left: -503px;
 	}
 
 html,body {
@@ -36,12 +41,13 @@ body{
 	height: 75px;
 	background-color: #38b6ff;
 	z-index: 9001;
+	
 }
 
 p{
 	position: relative;
 	top: 10px;
-	
+	font-family:Courier New;
 	display: inline;
 	padding: 10px;
 }
@@ -50,13 +56,19 @@ p{
 
 #Home{
 	height: 900px;
+
 }
 
-#About,
-#Areas_of_Interest,
-#Skills_Expertise{
-	height: 800px;
+#About{
+height: 700px;
+}
 
+#Areas_of_Interest{
+	height: 600px;
+}
+
+#Skills_Expertise{
+	height: 200px;
 }
   
 #Home{
@@ -66,11 +78,7 @@ p{
 	background-position: center;
 	background-size: cover;
 	margin:0px;
-	text-align: center;
-	
-	
-	
-	
+	text-align: center;	
 }
 
  
@@ -79,11 +87,22 @@ p{
 	margin:0px;
 	padding:25px;
 	margin-top: 0px;
+	
 }
 
 #Areas_of_Interest{
 	background: linear-gradient(0deg, #cfe7f9,#a5d2f7 );
 	padding:25px;
+	display:flex;
+	justify-content:space-between;
+	
+	
+	
+	
+	
+	
+	
+	
 }
 
 #Skills_Expertise{
@@ -115,6 +134,7 @@ a {
   text-align: center;
   line-height: 1;
   color: black;
+  font-family:Courier New;
 }
 
 a:link,
@@ -155,3 +175,62 @@ a:active {
   padding-top: 102px;
 }
 
+
+p1{
+
+	text-align: right;
+	font-family:Courier New;
+	font-size: 20px;
+	
+	
+}
+
+p3{
+font-size: 25px;
+font-family:Courier New;
+font-weight: bold;
+
+
+
+}
+
+p4{img{
+float:left;
+}
+
+}
+
+div1{
+float:right;
+width:30%;
+
+position:relative;
+top: 150px;
+left:-230px;
+
+}
+
+div2{
+float:right;
+width:30%;
+
+position:relative;
+top: 150px;
+left:-230px;
+
+
+
+
+
+}
+
+p4{
+font-family:Courier New;
+
+}
+
+p2{
+	text-align: right;
+	font-family:Courier New;
+	font-size: 20px;}
+	
