@@ -3,14 +3,14 @@
 h1 { margin-top: 0;
      font-size: 35px;
 	 padding:5px;
-color:white;
-text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
+     color:white;
+     text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
 }
 h4 { margin-top: -33px;
      font-size: 20px;
-color:white;
-text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
-padding: 5px;
+     color:white;
+     text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
+     padding: 5px;
 }
 
 nav {top: 35px;
@@ -20,7 +20,7 @@ nav {top: 35px;
 	font-family:Courier New;
 	display: inline;
 	position: relative;
-	left: -503px;
+	left: -480px;
 	}
 
 html,body {
@@ -50,6 +50,7 @@ p{
 	font-family:Courier New;
 	display: inline;
 	padding: 10px;
+	
 }
 
 
@@ -65,6 +66,7 @@ height: 700px;
 
 #Areas_of_Interest{
 	height: 600px;
+	padding:25px;
 }
 
 #Skills_Expertise{
@@ -92,9 +94,8 @@ height: 700px;
 
 #Areas_of_Interest{
 	background: linear-gradient(0deg, #cfe7f9,#a5d2f7 );
-	padding:25px;
 	display:flex;
-	justify-content:space-between;
+	justify-content:center;
 	
 	
 	
@@ -114,8 +115,6 @@ height: 700px;
 
 
 /* The following is to make the nav links light up when hovered over */
-
-
 body,
 html {
   
@@ -153,14 +152,7 @@ a:active {
   color: white;
 }
 
-
-
-
 /* the above is to make the navlinks light up when hovered */
-
-
-
-
 
 
 /* The sticky class is added to the header with JS when it reaches its scroll position */
@@ -178,10 +170,9 @@ a:active {
 
 p1{
 
-	text-align: right;
+	text-align: left;
 	font-family:Courier New;
 	font-size: 20px;
-	
 	
 }
 
@@ -190,47 +181,33 @@ font-size: 25px;
 font-family:Courier New;
 font-weight: bold;
 
-
-
 }
 
-p4{img{
-float:left;
-}
-
-}
-
-div1{
-float:right;
-width:30%;
-
-position:relative;
-top: 150px;
-left:-230px;
-
-}
-
-div2{
-float:right;
-width:30%;
-
-position:relative;
-top: 150px;
-left:-230px;
-
-
-
-
-
-}
 
 p4{
 font-family:Courier New;
 
 }
 
+
 p2{
 	text-align: right;
 	font-family:Courier New;
 	font-size: 20px;}
 	
+	
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(2,29%);
+  gap: 15%;
+  grid-auto-rows: minmax(100px, auto);
+  margin-top:5%;
+  justify-content:center;
+  margin-right:7%;
+ 
+}
+
+#bio{width:80%;
+     font-family:Courier New;
+	 font-size: 20px;}
+
