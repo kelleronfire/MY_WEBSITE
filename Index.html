@@ -4,19 +4,17 @@
 <div class="header" id = "myheader">
   <link rel="stylesheet" type="text/css" href="style.css">
 
-  
-  <p><a href="Index.html">HOME</a></p>
-  <p><a href="https://github.com/kelleronfire">GITHUB</a></p>
-  <p><a href="Portfolio.html">DASHBOARDS</a></p>
-  <p><a href="RESUME.docx.html">RESUME</a></p>
-  <p><a href="extra.html">PHOTOGRAPHY</a></p>
-  <nav>
-    
-	<a href="#About">ABOUT</a>
-	<a href="#Areas_of_Interest">SERVICES</a>
-	<a href="#Skills_Expertise">CONTACT</a>
-	
-  </nav>
+
+
+  <button id="dropdownBtn">Menu</button>
+  <ul id="dropdownMenu">  
+  <li><a href="https://github.com/kelleronfire">Github</a></li>
+  <li><a href="Portfolio.html">Dashboards</a></li>
+  <li><a href="RESUME.docx.html">Resume</a></li>
+  </ul>
+ 
+
+
   </div>
   </head> 
   <section id = "Home">
@@ -24,99 +22,66 @@
    alt="logo" width = "300" height = "300" >
   </section>
   
-  <section id = "About">
-    <h1>ABOUT</h1>
-	
-	<img src="profilepic.jpg" alt="profile" width = "300" height = "450" ALIGN="left">
-	<div id="bio">
-	Hi, my name is Charles Keller Munroe, but my friends call me Keller. I grew up in Temple Texas before attending UT Austin where I graduated with a BS in Computational Biology as well as a minor in philosophy and a certificate
-	in Elements of Computing. I love being challenged, solving problems and creating finished products. I am a firm believer that no problem is too big as long as you approach it with the right mindset. Outside of tech I enjoy rock climbing, fishing, photography, slacklining and Philosophy.  
-	</div>
-  </section>
-  
-  <section id = "Areas_of_Interest">
-    <h1>Services</h1>
-	<div class="wrapper">
-	<div class="one">
-	<p3> Data Analysis </p3><br>
-	<p4>
-	<img src="dataanalysisicon.jpg" alt="logo" width = "50" height = "50" ALIGN="left">
-	Clearly Determine trends to provide buisness insight through vizualizations and models.
-	</p4>
-	</div>
-	
-	<div class="two">
-	<p3> Data Analytics </p3><br>
-	<p4>
-	<img src="analyticsicon.jpg" alt="logo" width = "50" height = "50" ALIGN="left">
-	Predictive modeling and machine learning techniques to help you drive buisness decesions.
-	</p4>
-	</div>
-	
-	<div class="three">
-	<p3> Dashboards </p3><br>
-	<p4>
-	<img src="dashboardicon.jpg" alt="logo" width = "50" height = "50" ALIGN="left">
-	Vizualizations of the most recent data to help you find your own buisness insights.
-	</p4>
-	</div>
-	
-	<div class="four">
-	<p3> Interactive Infographics</p3><br>
-	<p4>
-	<img src="interactive.jpg" alt="logo" width = "50" height = "50" ALIGN="left">
-	Display your data in an interesting and interactive way that helps the audience understand your story.
-	</p4>
-	</div>
-	
-	<div class="five">
-	<p3> Data Engineering</p3><br>
-	<p4>
-	<img src="databaseicon.jpg" alt="logo" width = "50" height = "50" ALIGN="left">
-	Design, build and deployment of various database systems.
-	</p4>
-	</div>
-	
-	<div class="six">
-	<p3> Front-end Web Development</p3><br>
-	<p4>
-	<img src="webicon.jpg" alt="logo" width = "50" height = "50" ALIGN="left">
-	Build a website to support your own buisness needs.</p4>
-	</div>
-	</div>
-	
-  </section>
-  
-  <section id = "Skills_Expertise">
-    <h1>Contact</h1>
-	<p2>Email: charles.munroe@utexas.edu</p2> <br>
-	<p2>Phone: (254)-780-7447</p2> <br>
-	
-	
-	
-	
-	
+ <section id="About">
+    <div id="bio" style="display: flex; justify-content: center; align-items: flex-start; text-align: left;">
+        <img src="profilepic.jpg" alt="Profile Picture" width="400" height="600" style="border: 4px solid #333; border-radius: 10px; margin-right: 20px;">
+        <div style="width: 100%; background-color: #6699CC; border: 2px solid #333; border-radius: 10px; padding: 20px;">
+            <h1 style="font-family: 'YourCustomHeadingFont', sans-serif; font-size: 40px; margin-top: 0;">Hi, I'm Charles Munroe</h1>
+            <h1 style="font-family: 'Roboto', sans-serif; font-size: 22px;">
+                I'm a creative problem solver who loves a good challenge. I thrive on solving problems and transforming them into valuable insights. Let's work together and create something amazing.
+            </h1>
+        </div>
+    </div>
+</section>
 
+  
+	
   </section>
+  
 
 <script>
-// When the user scrolls the page, execute myFunction
-window.onscroll = function() {myFunction()};
 
-// Get the header
-var header = document.getElementById("myheader");
+let prevScrollPos = window.pageYOffset;
 
-// Get the offset position of the navbar
-var sticky = header.offsetTop;
+window.onscroll = function() {
+    let currentScrollPos = window.pageYOffset;
+    if (prevScrollPos > currentScrollPos) {
+        document.querySelector("head").style.top = "0";
+    } else {
+        document.querySelector("head").style.top = "-100px"; // Change the value to match your header height
+    }
+    prevScrollPos = currentScrollPos;
+};
 
-// Add the sticky class to the header when you reach its scroll position. Remove "sticky" when you leave the scroll position
-function myFunction() {
-  if (window.pageYOffset > sticky) {
-    header.classList.add("sticky");
-  } else {
-    header.classList.remove("sticky");
-  }
-}
+
+
+
+
+
+
+const dropdownBtn = document.getElementById("dropdownBtn");
+const dropdownMenu = document.getElementById("dropdownMenu");
+
+dropdownBtn.addEventListener("click", function() {
+    if (dropdownMenu.style.display === "block") {
+        dropdownMenu.style.display = "none";
+    } else {
+        dropdownMenu.style.display = "block";
+    }
+});
+
+// Remove the click event listener for dropdownMenu
+dropdownMenu.addEventListener("click", function(event) {
+    event.stopPropagation();
+});
+
+document.addEventListener("click", function(event) {
+    if (!event.target.matches("#dropdownBtn") && !event.target.matches("#dropdownMenu")) {
+        dropdownMenu.style.display = "none";
+    }
+});
+
+
 </script>
 
 

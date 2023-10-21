@@ -1,10 +1,87 @@
+.custom-button {
+    background-color: white; /* White background color */
+    color: #000; /* Black text color */
+    border: 2px solid #000; /* Black border */
+    padding: 15px 30px; /* Increase padding for larger size */
+    font-size: 30px; /* Increase font size */
+    cursor: pointer;
+    border-radius: 50% 10%; /* Adjust the values to make it oval-shaped */
+    margin-left:3px;
+}
 
+
+#dropdownBtn {
+    background-color:  #6699CC;
+    color: #fff;
+    border: None;
+    padding: 15px 25px;
+    cursor: pointer;
+    border-radius: 25px 25px 25px 25px;
+    margin-left:3px;
+    margin-top:2px;
+     
+}
+
+#dropdownMenu {
+    display:none;
+    list-style-type: none;
+    padding: 0;
+    background-color: #6699CC;
+    position: absolute;
+    top: 40px;
+    left: 5px;
+    border: 3px solid #000;
+    font-family:Arial;
+    color:#6699CC;
+    border-radius: 25px 25px 25px 25px;
+
+}
+
+#dropdownMenu li {
+    margin: 0;
+    padding: 0;
+    background-color: #6699CC;
+    border-radius: 25px 25px 25px 25px;
+
+}
+
+#dropdownMenu li a {
+    display: block;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    background-color: #6699CC;
+    border-radius: 25px 25px 25px 25px;
+
+
+}
+
+#dropdownMenu li a:hover {
+    background-color: #5A5A5A;
+}
+
+
+
+
+
+
+       
 
 h1 { margin-top: 0;
      font-size: 35px;
 	 padding:5px;
      color:white;
+     text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;}
+
+h6 { margin-top: 0;
+     font-size: 20px;
+         padding:5px;
+     color:white;
      text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
+}
+
+
+
 }
 h4 { margin-top: -33px;
      font-size: 20px;
@@ -13,15 +90,6 @@ h4 { margin-top: -33px;
      padding: 5px;
 }
 
-nav {top: 35px;
-	padding: 10px;
-	word-spacing: 22px;
-	letter-spacing: -1px;
-	font-family:Courier New;
-	display: inline;
-	position: relative;
-	left: -480px;
-	}
 
 html,body {
     margin:0;
@@ -41,15 +109,16 @@ body{
 	height: 75px;
 	background-color: #38b6ff;
 	z-index: 9001;
-	
+	font-family:Arial	
 }
 
 p{
 	position: relative;
 	top: 10px;
-	font-family:Courier New;
+	font-family:Times New Roman;
 	display: inline;
-	padding: 10px;
+	padding:100px;
+	color:white;
 	
 }
 
@@ -64,14 +133,7 @@ p{
 height: 700px;
 }
 
-#Areas_of_Interest{
-	height: 600px;
-	padding:25px;
-}
 
-#Skills_Expertise{
-	height: 200px;
-}
   
 #Home{
 	background: linear-gradient(0deg, #38b6ff,#38b6ff);
@@ -95,22 +157,9 @@ height: 700px;
 #Areas_of_Interest{
 	background: linear-gradient(0deg, #cfe7f9,#a5d2f7 );
 	display:flex;
-	justify-content:center;
-	
-	
-	
-	
-	
-	
-	
+	justify-content:center;	
 	
 }
-
-#Skills_Expertise{
-	background-color: #cfe7f9;
-	padding:25px;
-}
-
 
 
 
@@ -132,19 +181,19 @@ a {
   outline: none;
   text-align: center;
   line-height: 1;
-  color: black;
-  font-family:Courier New;
+  color: white;
+  font-family:Helvetica;
 }
 
 a:link,
 a:visited,
 a:focus {
   background: #38b6ff;
-  color: black;
+  color: white;
 }
 
 a:hover {
-  background: orange;
+  background: #6699CC;
 }
 
 a:active {
@@ -180,7 +229,6 @@ p3{
 font-size: 25px;
 font-family:Courier New;
 font-weight: bold;
-
 }
 
 
@@ -207,7 +255,7 @@ p2{
  
 }
 
-#bio{width:80%;
+#bio{width:100%;
      font-family:Courier New;
 	 font-size: 20px;}
 
