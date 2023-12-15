@@ -1,91 +1,95 @@
 <!DOCTYPE html>
 <html>
 <head>
-<div class="header" id = "myheader">
-  <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <style>
+        /* CSS for Slide In and Out Animations from the bottom */
+        #About {
+            height: 100vh; /* Full viewport height */
+            overflow: auto; /* Scroll within the section if content is large */
+            position: fixed;
+            bottom: -110%; /* Start offscreen at the bottom */
+            top: auto;
+            left: 0;
+            right: 0;
+            display: block;
+            width: 100%;
+            /* Other styles for the section */
+        }
 
+        @keyframes slideIn {
+            from { bottom: -100%; }
+            to { bottom: 0; }
+        }
 
+        @keyframes slideOut {
+            from { bottom: 0; }
+            to { bottom: -110%; }
+        }
 
-  <button id="dropdownBtn">Menu</button>
-  <ul id="dropdownMenu">  
-  <li><a href="https://github.com/kelleronfire">Github</a></li>
-  <li><a href="Portfolio.html">Dashboards</a></li>
-  <li><a href="RESUME.docx.html">Resume</a></li>
-  </ul>
- 
+        .slide-in {
+            animation: slideIn 0.2s ease-out forwards; /* Faster animation */
+        }
 
-
-  </div>
-  </head> 
-  <section id = "Home">
-   <img src="CHarles Munroe (1).jpg" style="margin-top:230px;"
-   alt="logo" width = "300" height = "300" >
-  </section>
-  
- <section id="About">
-    <div id="bio" style="display: flex; justify-content: center; align-items: flex-start; text-align: left;">
-        <img src="profilepic.jpg" alt="Profile Picture" width="400" height="600" style="border: 4px solid #333; border-radius: 10px; margin-right: 20px;">
-        <div style="width: 100%; background-color: #6699CC; border: 2px solid #333; border-radius: 10px; padding: 20px;">
-            <h1 style="font-family: 'YourCustomHeadingFont', sans-serif; font-size: 40px; margin-top: 0;">Hi, I'm Charles Munroe</h1>
-            <h1 style="font-family: 'Roboto', sans-serif; font-size: 22px;">
-                I'm a creative problem solver who loves a good challenge. I thrive on solving problems and transforming them into valuable insights. Let's work together and create something amazing.
-            </h1>
-        </div>
+        .slide-out {
+            animation: slideOut 0.2s ease-out forwards; /* Faster animation */
+        }
+    </style>
+</head>
+<body>
+    <div class="header" id="myheader">
+        <button id="dropdownBtn">Menu</button>
+        <ul id="dropdownMenu" style="display: none;">
+            <li><a href="https://github.com/kelleronfire">Github</a></li>
+            <li><a href="Portfolio.html">Dashboards</a></li>
+            <li><a href="RESUME.docx.html">Resume</a></li>
+        </ul>
     </div>
-</section>
 
-  
-	
-  </section>
-  
+    <section id="Home">
+        <img src="CHarles Munroe (1).jpg" style="margin-top:230px;" alt="logo" width="300" height="300">
+    </section>
 
-<script>
+    <section id="About">
+        <div id="bio" style="display: flex; justify-content: center; align-items: flex-start; text-align: left; margin-top:3%;">
+            <img src="profilepic.jpg" alt="Profile Picture" width="400" height="600" style="border: 4px solid #333; border-radius: 10px; margin-right: 20px;">
+            <div style="width: 100%; background-color: #6699CC; border: 2px solid #333; border-radius: 10px; padding: 20px; margin-right: 4%;">
+                <h1 style="font-family: 'YourCustomHeadingFont', sans-serif; font-size: 40px; margin-top: 0;">Hi, I'm Charles Munroe</h1>
+                <p style="font-family: 'Roboto', sans-serif; font-size: 22px;">
+                    I'm a creative problem solver who loves a good challenge. I thrive on solving problems and transforming them into valuable insights. Let's work together and create something amazing.
+                </p>
+            </div>
+        </div>
+    </section>
 
-let prevScrollPos = window.pageYOffset;
+    <script>
+        // JavaScript for triggering slide in and out based on scroll direction
+        let lastScrollTop = 0;
+        const aboutSection = document.getElementById('About');
 
-window.onscroll = function() {
-    let currentScrollPos = window.pageYOffset;
-    if (prevScrollPos > currentScrollPos) {
-        document.querySelector("head").style.top = "0";
-    } else {
-        document.querySelector("head").style.top = "-100px"; // Change the value to match your header height
-    }
-    prevScrollPos = currentScrollPos;
-};
+        window.addEventListener('scroll', () => {
+            let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
 
+            if (currentScroll > lastScrollTop) {
+                // Scroll down
+                aboutSection.classList.remove('slide-out');
+                aboutSection.classList.add('slide-in');
+            } else {
+                // Scroll up
+                aboutSection.classList.remove('slide-in');
+                aboutSection.classList.add('slide-out');
+            }
+            lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // For mobile or negative scrolling
+        }, false);
 
+        // Script for dropdown menu
+        const dropdownBtn = document.getElementById("dropdownBtn");
+        const dropdownMenu = document.getElementById("dropdownMenu");
 
-
-
-
-
-const dropdownBtn = document.getElementById("dropdownBtn");
-const dropdownMenu = document.getElementById("dropdownMenu");
-
-dropdownBtn.addEventListener("click", function() {
-    if (dropdownMenu.style.display === "block") {
-        dropdownMenu.style.display = "none";
-    } else {
-        dropdownMenu.style.display = "block";
-    }
-});
-
-// Remove the click event listener for dropdownMenu
-dropdownMenu.addEventListener("click", function(event) {
-    event.stopPropagation();
-});
-
-document.addEventListener("click", function(event) {
-    if (!event.target.matches("#dropdownBtn") && !event.target.matches("#dropdownMenu")) {
-        dropdownMenu.style.display = "none";
-    }
-});
-
-
-</script>
-
-
-
-
-
+        dropdownBtn.addEventListener("click", function() {
+            dropdownMenu.style.display = dropdownMenu.style.display === "block" ? "none" : "block";
+        });
+    </script>
+</body>
 </html>
+
