@@ -50,17 +50,37 @@
         <img src="CHarles Munroe (1).jpg" style="margin-top:230px;" alt="logo" width="300" height="300">
     </section>
 
-    <section id="About">
-        <div id="bio" style="display: flex; justify-content: center; align-items: flex-start; text-align: left; margin-top:3%;">
-            <img src="profilepic.jpg" alt="Profile Picture" width="400" height="600" style="border: 4px solid #333; border-radius: 10px; margin-right: 20px;">
-            <div style="width: 100%; background-color: #6699CC; border: 2px solid #333; border-radius: 10px; padding: 20px; margin-right: 4%;">
+ <section id="About">
+    <!-- Main Container for Image, Text Box, and Carousel -->
+    <div id="bio" style="display: flex; justify-content: center; align-items: flex-start; margin-top: 3%;">
+        
+        <!-- Image -->
+        <img src="profilepic.jpg" alt="Profile Picture" width="400" height="600" style="border: 4px solid #333; border-radius: 10px; margin-right: 20px;">
+        
+        <!-- Container for Text Box and Carousel -->
+        <div style="display: flex; flex-direction: column; width: 100%;">
+            
+            <!-- Text Box -->
+            <div style="background-color: #6699CC; border: 2px solid #333; border-radius: 10px; padding: 20px; margin-bottom: 0;">
                 <h1 style="font-family: 'YourCustomHeadingFont', sans-serif; font-size: 40px; margin-top: 0;">Hi, I'm Charles Munroe</h1>
                 <p style="font-family: 'Roboto', sans-serif; font-size: 22px;">
                     I'm a creative problem solver who loves a good challenge. I thrive on solving problems and transforming them into valuable insights. Let's work together and create something amazing.
                 </p>
             </div>
+
+            <!-- Carousel Section -->
+            <main id="carousel" style="margin-top: 10px;">
+                <div class="item" style="background-color: red; height: 100%; width: 50%;">Slide 1</div>
+                <div class="item" style="background-color: blue; height: 100%; width: 50%;">Slide 2</div>
+                <div class="item" style="background-color: green; height: 100%; width: 50%;">Slide 3</div>
+            
+                <button id="prev" aria-label="Previous">&#10094;</button>
+                <button id="next" aria-label="Next">&#10095;</button>
+           </main>
         </div>
-    </section>
+    </div>
+</section>
+
 
     <script>
         // JavaScript for triggering slide in and out based on scroll direction
@@ -89,6 +109,52 @@
         dropdownBtn.addEventListener("click", function() {
             dropdownMenu.style.display = dropdownMenu.style.display === "block" ? "none" : "block";
         });
+
+
+
+
+
+
+
+
+document.getElementById('prev').addEventListener('click', () => changeSlide(-1));
+document.getElementById('next').addEventListener('click', () => changeSlide(1));
+
+let currentSlide = 0;
+const totalSlides = document.querySelectorAll('#carousel .item').length;
+
+function changeSlide(direction) {
+    currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
+
+    document.querySelectorAll('#carousel .item').forEach((item, index) => {
+        let pos = (index - currentSlide + totalSlides) % totalSlides;
+
+        if (pos === 0) {
+            // Current slide in the center
+            item.style.transform = 'translateX(-50%) scale(1)';
+            item.style.opacity = 1;
+            item.style.zIndex = 2;
+        } else if (pos === totalSlides - 1) {
+            // Slide immediately to the left
+            item.style.transform = 'translateX(calc(-70% - 150px)) scale(0.8)';
+            item.style.opacity = 0.6;
+            item.style.zIndex = 1;
+        } else if (pos === 1) {
+            // Slide immediately to the right
+            item.style.transform = 'translateX(calc(-30% + 150px)) scale(0.8)';
+            item.style.opacity = 0.6;
+            item.style.zIndex = 1;
+        } else {
+            // Other slides
+            item.style.transform = 'translateX(-50%) scale(0.6)';
+            item.style.opacity = 0.4;
+            item.style.zIndex = 0;
+        }
+    });
+}
+
+
+
     </script>
 </body>
 </html>

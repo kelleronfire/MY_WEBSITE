@@ -269,3 +269,45 @@ p2{
      font-family:Courier New;
 	 font-size: 20px;}
 
+
+
+
+#carousel {
+    width: 100%;
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative; /* Needed for absolute positioning of arrows */
+}
+
+.item {
+    flex: 0 0 auto;
+    width: 50vw; /* Adjust based on your item width */
+    height: 70vh; /* Adjust based on your item height */
+    transition: transform 0.5s ease, z-index 0.5s ease, opacity 0.5s ease;
+    opacity:0.6;
+    position: absolute; /* Position items absolutely within carousel */
+    left: 50%; /* Center items */
+    transform: translateX(-50%) scale(0.8); /* Center and scale down items */
+}
+
+#prev, #next {
+    position: absolute;
+    top: 80%; /* Position below the slides */
+    transform: translateY(10px);
+    z-index: 2;
+}
+
+#prev { left: calc(50% - 60px); /* Adjust as needed */ }
+#next { right: calc(50% - 60px); /* Adjust as needed */ }
+
+
+
+
+#bio img, #bio > div, #carousel {
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
