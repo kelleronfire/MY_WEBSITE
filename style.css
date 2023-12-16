@@ -283,9 +283,10 @@ p2{
 }
 
 .item {
+    aspect-ratio: 3/2;
     flex: 0 0 auto;
-    width: 50vw; /* Adjust based on your item width */
-    height: 70vh; /* Adjust based on your item height */
+    width: 40vw; /* Adjust based on your item width */
+    height: 100vh; /* Adjust based on your item height */
     transition: transform 0.5s ease, z-index 0.5s ease, opacity 0.5s ease;
     opacity:0.6;
     position: absolute; /* Position items absolutely within carousel */
@@ -295,7 +296,7 @@ p2{
 
 #prev, #next {
     position: absolute;
-    top: 80%; /* Position below the slides */
+    top: 92%; /* Position below the slides */
     transform: translateY(10px);
     z-index: 2;
 }
@@ -311,3 +312,20 @@ p2{
     padding-bottom: 0;
 }
 
+
+
+
+.item::before {
+    content: '';
+    display: block;
+    padding-top: 66.67%; /* 3:2 aspect ratio (height/width * 100%) */
+}
+ .item img {
+    padding-top:2%;
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* or 'contain' depending on your need */
+    position: absolute;
+    top: 25%;
+    left: 0;
+}
