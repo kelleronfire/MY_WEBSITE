@@ -127,7 +127,16 @@ p{
 #Home{
 	height:100vh;
         width:100vw;
+        display: flex;
+        justify-content: center; /* Center horizontally */
+        
 
+}
+
+.image-container img {
+    max-width: 100%; /* Ensure the image is responsive */
+    height: auto; /* Maintain the aspect ratio */
+    /* Add additional styles if needed */
 }
 
 #About{
