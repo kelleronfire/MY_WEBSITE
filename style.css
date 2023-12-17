@@ -296,13 +296,21 @@ p2{
 
 #prev, #next {
     position: absolute;
-    top: 92%; /* Position below the slides */
-    transform: translateY(10px);
+    top: 50%; /* Adjust the position as needed */
+    transform: translateY(-50%);
     z-index: 2;
+    background-color: #6699CC; /* Stylish background color */
+    color: white; /* Text color */
+    border: none; /* Remove default border */
+    padding: 10px 15px; /* Padding for size */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 20px; /* Larger font size */
+    cursor: pointer; /* Cursor change to indicate clickable */
+    transition: background-color 0.3s, transform 0.3s; /* Smooth transition for hover effect */
 }
 
-#prev { left: calc(50% - 60px); /* Adjust as needed */ }
-#next { right: calc(50% - 60px); /* Adjust as needed */ }
+#prev { left: 0; /* Adjust as needed */ }
+#next { right: 0; /* Adjust as needed */ }
 
 
 
@@ -328,4 +336,10 @@ p2{
     position: absolute;
     top: 25%;
     left: 0;
+}
+
+
+#prev:hover, #next:hover {
+    background-color: #557A95; /* Darker shade on hover */
+    transform: translateY(-50%) scale(1.1); /* Slightly enlarge the buttons on hover */
 }
