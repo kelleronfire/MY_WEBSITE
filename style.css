@@ -127,17 +127,14 @@ p{
 #Home{
 	height:100vh;
         width:100vw;
-        
-        
-
 }
 
 
 
 
 #About{
-height: 700px;
-bottom:-110%;
+height: 100vh;
+bottom:100vw;
 }
 
 
