@@ -135,6 +135,8 @@ p{
 #About{
 height: 100vh;
 bottom:100vw;
+max-width:100%;
+overflow-x:hidden;
 }
 
 
