@@ -265,7 +265,7 @@ p2{
 
 #bio{width:100%;
      font-family:Courier New;
-	 font-size: 20px;}
+     font-size: 20px;}
 
 
 
@@ -358,7 +358,7 @@ p2{
     border-radius: 10px;
     margin-right: 20px;
     margin-left:10px;
-    margin-top:20px;
+    margin-top:10vh;
     /* Add additional styles if needed */
 }
 
@@ -371,3 +371,77 @@ p2{
         /* Adjust other properties if needed */
     }
 }
+
+
+
+
+
+
+
+
+
+
+.text-box {
+    background-color: #6699CC;
+    border: 2px solid #333;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 0;
+    /* Responsive width */
+    max-width: 80%; /* Adjust as needed */
+    margin: auto; /* Centering if desired */
+    font-family: 'Roboto', sans-serif; /* Set default font */
+    margin-top:10vh;
+}
+
+.text-box h1 {
+    font-family: 'YourCustomHeadingFont', sans-serif;
+    font-size: 40px; /* Adjust as needed */
+    margin-top: 0;
+}
+
+.text-box p {
+    font-size: 22px; /* Adjust as needed */
+}
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 768px) {
+    .text-box {
+        padding: 10px; /* Smaller padding on mobile */
+        max-width: 95%; /* Adjust width for smaller screens */
+    }
+
+    .text-box h1 {
+        font-size: 30px; /* Smaller font size for mobile */
+    }
+
+    .text-box p {
+        font-size: 18px; /* Smaller font size for mobile */
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
