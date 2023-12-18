@@ -89,6 +89,14 @@ html{
 	font-family:Arial	
 }
 
+
+
+body {
+    background-color: #38b6ff; /* Your chosen color */
+}
+
+
+
 p{
 	position: relative;
 	top: 10px;
