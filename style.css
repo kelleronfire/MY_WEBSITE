@@ -346,8 +346,8 @@ p2{
 /* Media Query for Mobile Devices */
 @media screen and (max-width: 768px) { /* You can adjust this breakpoint */
     .logo {
-        max-width: 10vw; /* Smaller max-width for mobile, adjust as needed */
-        max-height: 10vw; /* Smaller max-height for mobile */
+        max-width: 30vw; /* Smaller max-width for mobile, adjust as needed */
+        max-height: 30vw; /* Smaller max-height for mobile */
     }
 }
 
