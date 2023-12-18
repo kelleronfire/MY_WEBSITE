@@ -6,8 +6,7 @@
     font-size: 30px; /* Increase font size */
     cursor: pointer;
     border-radius: 50% 10%; /* Adjust the values to make it oval-shaped */
-    margin-left:3px;
-}
+    margin-left:3px;}
 
 
 #dropdownBtn {
@@ -18,9 +17,7 @@
     cursor: pointer;
     border-radius: 25px 25px 25px 25px;
     margin-left:3px;
-    margin-top:2px;
-     
-}
+    margin-top:2px;}
 
 #dropdownMenu {
     display:none;
@@ -33,17 +30,13 @@
     border: 3px solid #000;
     font-family:Arial;
     color:#6699CC;
-    border-radius: 25px 25px 25px 25px;
-
-}
+    border-radius: 25px 25px 25px 25px;}
 
 #dropdownMenu li {
     margin: 0;
     padding: 0;
     background-color: #6699CC;
-    border-radius: 25px 25px 25px 25px;
-
-}
+    border-radius: 25px 25px 25px 25px;}
 
 #dropdownMenu li a {
     display: block;
@@ -51,10 +44,8 @@
     padding: 10px 20px;
     text-decoration: none;
     background-color: #6699CC;
-    border-radius: 25px 25px 25px 25px;
+    border-radius: 25px 25px 25px 25px;}
 
-
-}
 
 #dropdownMenu li a:hover {
     background-color: #5A5A5A;
@@ -63,7 +54,7 @@
 
 h1 { margin-top: 0;
      font-size: 35px;
-	 padding:5px;
+     padding:5px;
      color:white;
      text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;}
 
@@ -85,19 +76,11 @@ h4 { margin-top: -33px;
 }
 
 
-html,body {
-    margin:0;
-    padding:0;
-    overflow-x:hidden;
-}
-
 html{
   scroll-behavior: smooth;
 }
 
-body{
-	color: black;
-  }
+
 
 #myheader{
 	height: 75px;
@@ -156,20 +139,7 @@ overflow-x:hidden;
  
 #About{
 	background: linear-gradient(0deg, #a5d2f7,#38b6ff);
-	margin:0px;
-	padding:25px;
-	margin-top: 10%;
-	
 }
-
-#Areas_of_Interest{
-	background: linear-gradient(0deg, #cfe7f9,#a5d2f7 );
-	display:flex;
-	justify-content:center;	
-	
-}
-
-
 
 
 /* The following is to make the nav links light up when hovered over */
@@ -258,9 +228,9 @@ p2{
   grid-template-columns: repeat(2,29%);
   gap: 15%;
   grid-auto-rows: minmax(100px, auto);
-  margin-top:5%;
+  
   justify-content:center;
-  margin-right:7%;
+  
  
 }
 
@@ -357,8 +327,8 @@ p2{
     height: auto; /* Maintain the aspect ratio */
     border: 4px solid #333;
     border-radius: 10px;
-    margin-right: 20px;
-    margin-left:10px;
+    margin-right: 1vw;
+    margin-left:5vw;
     margin-top:10vh;
     /* Add additional styles if needed */
 }
@@ -369,7 +339,7 @@ p2{
 @media screen and (max-width: 768px) { /* Media query for mobile devices */
     .profile-pic {
         width: 40vw; /* Increase the width on smaller screens */
-        /* Adjust other properties if needed */
+        margin-left:3vw; /* Adjust other properties if needed */
     }
 }
 
@@ -393,7 +363,7 @@ p2{
     margin: auto; /* Centering if desired */
     font-family: 'Roboto', sans-serif; /* Set default font */
     margin-top:10vh;
-    margin-right:20vh;
+    margin-right:5vw;
 }
 
 .text-box h1 {
@@ -419,6 +389,7 @@ p2{
     .text-box {
         padding: 10px; /* Smaller padding on mobile */
         max-width: 95%; /* Adjust width for smaller screens */
+        margin-right:3vw;
     }
 
     .text-box h1 {
