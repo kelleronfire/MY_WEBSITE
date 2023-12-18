@@ -120,6 +120,7 @@ p{
 
 #Home{
 	height:100vh;
+        width:100vw;
         display: flex;
         justify-content: center; /* Center horizontally */
         align-items: center; /* Center vertically */
@@ -392,6 +393,7 @@ p2{
     margin: auto; /* Centering if desired */
     font-family: 'Roboto', sans-serif; /* Set default font */
     margin-top:10vh;
+    margin-right:20vh;
 }
 
 .text-box h1 {
