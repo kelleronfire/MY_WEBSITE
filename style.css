@@ -396,7 +396,7 @@ p2{
 @media screen and (max-width: 768px) {
     .text-box {
         padding: 10px; /* Smaller padding on mobile */
-        width: 30vw; /* Adjust width for smaller screens */
+        width: 45vw; /* Adjust width for smaller screens */
         margin-right:3vw;
     }
 
