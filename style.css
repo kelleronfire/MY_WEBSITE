@@ -357,6 +357,8 @@ p2{
     border: 4px solid #333;
     border-radius: 10px;
     margin-right: 20px;
+    margin-left:10px;
+    margin-top:20px;
     /* Add additional styles if needed */
 }
 
