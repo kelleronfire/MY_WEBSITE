@@ -415,15 +415,17 @@ p2{
         align-items: center;
     }
 
+    .profile-text-container {
+        flex-direction: row; /* Keep profile picture and text box side by side */
+    }
+
     .profile-pic, .text-box {
-        width: 100%;
-        /* Adjust other styles for mobile view */
+        width: 50%; /* Adjust as needed */
     }
 
     #carousel {
         width: 100%;
-        margin-top: 20px; /* Add some space between the text box and the carousel */
-        /* Any additional carousel styling for mobile */
+        margin-top: 20px; /* Space between text box and carousel */
     }
 }
 
