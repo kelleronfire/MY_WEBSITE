@@ -411,7 +411,7 @@ p2{
 
 @media screen and (max-width: 768px) {
     #bio {
-        flex-direction: column;
+        
         align-items: center;
     }
 
