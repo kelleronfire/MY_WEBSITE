@@ -359,6 +359,7 @@ p2{
 @media screen and (max-width: 768px) { /* Media query for mobile devices */
     .profile-pic {
         width: 20vw; /* Increase the width on smaller screens */
+        max-width: 150px;
         margin-left:3vw; /* Adjust other properties if needed */
     }
 }
