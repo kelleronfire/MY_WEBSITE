@@ -393,16 +393,16 @@ p2{
 @media screen and (max-width: 768px) {
     .text-box {
         padding: 10px; /* Smaller padding on mobile */
-        width: 45vw; /* Adjust width for smaller screens */
+        width: 20vw; /* Adjust width for smaller screens */
         margin-right:3vw;
     }
 
     .text-box h1 {
-        font-size: 30px; /* Smaller font size for mobile */
+        font-size: 25px; /* Smaller font size for mobile */
     }
 
     .text-box p {
-        font-size: 18px; /* Smaller font size for mobile */
+        font-size: 13px; /* Smaller font size for mobile */
     }
 }
 
