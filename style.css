@@ -478,11 +478,6 @@ body {
     .profile-text-box-container {
         flex-direction: row;
     }
-
-    .profile-pic, .text-box {
-        width: 50%; /* Adjust as needed to fit side by side */
-        /* Additional responsive styling as needed */
-    }
 }
 
 
