@@ -420,7 +420,7 @@ p2{
     }
 
     .profile-pic, .text-box {
-        width: 50%; /* Adjust as needed */
+        width: 100%; /* Adjust as needed */
     }
 
     #carousel {
@@ -464,3 +464,25 @@ body {
     margin-top: 0;
     /* Other styles for p */
 }
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 768px) {
+    .profile-text-box-container {
+        flex-direction: row;
+    }
+
+    .profile-pic, .text-box {
+        width: 50%; /* Adjust as needed to fit side by side */
+        /* Additional responsive styling as needed */
+    }
+}
+
+
