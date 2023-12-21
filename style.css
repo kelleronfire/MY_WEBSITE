@@ -359,7 +359,7 @@ p2{
 @media screen and (max-width: 768px) { /* Media query for mobile devices */
     .profile-pic {
         width: 20vw; /* Increase the width on smaller screens */
-        max-width: 150px;
+        max-width: 170px;
         margin-left:3vw; /* Adjust other properties if needed */
     }
 }
@@ -427,6 +427,10 @@ p2{
     #carousel {
         width: 100%;
         margin-top: 20px; /* Space between text box and carousel */
+        position: absolute;
+        
+        left: 50%;
+        
     }
 }
 
