@@ -412,22 +412,27 @@ p2{
 
 @media screen and (max-width: 768px) {
     #bio {
-        
-        align-items: center;
+        flex-direction: column; /* Stack elements vertically */
+        align-items: center; /* Center align items */
     }
 
-    .profile-text-container {
-        flex-direction: row; /* Keep profile picture and text box side by side */
+    #bio img.profile-pic, .text-box {
+        width: 100%; /* Adjust profile picture and text box to full width */
+        margin-left: 0; /* Adjust if needed */
+        margin-right: 0; /* Adjust if needed */
     }
 
-    .profile-pic, .text-box {
-        width: 100%; /* Adjust as needed */
+    /* Container for Text Box and Carousel */
+    #bio > div {
+        width: 100%; /* Full width for mobile */
     }
 
     #carousel {
-        width: 100%;
-        margin:20px auto 0;
-        
+        width: 100vw; /* Full viewport width */
+        position: relative; /* Reset position if needed */
+        left: 50%; /* Move to the center */
+        transform: translateX(-50%); /* Adjust for true centering */
+        margin-top: 10px; /* Maintain top margin */
     }
 }
 
