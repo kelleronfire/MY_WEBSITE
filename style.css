@@ -415,13 +415,17 @@ p2{
 @media screen and (max-width: 768px) {
     #bio {
         flex-direction: row; /* Keep elements side by side */
-        flex-wrap: wrap; /* Allow elements to wrap */
-        justify-content: space-around; /* Space elements evenly */
+        justify-content: flex-start; /* Align items to the start (left) */
+        align-items: flex-start; /* Align items to the top */
     }
 
-    .profile-pic, #bio > div {
-        width: 45%; /* Adjust the width so they fit side by side */
-        margin: 0; /* Reset margins */
+    .profile-pic {
+        width: 40%; /* Adjust the width of the profile picture */
+        margin-right: 2%; /* Optional margin for spacing */
+    }
+
+    #bio > div {
+        width: 58%; /* Adjust the width of the text box container */
     }
 
     .text-box {
@@ -434,6 +438,7 @@ p2{
         left: 50%;
         transform: translateX(-50%);
         order: 3; /* Ensure carousel is positioned after the text box and image */
+        margin-top: 10px; /* Adjust margin as needed */
     }
 }
 
