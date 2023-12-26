@@ -420,12 +420,12 @@ p2{
     }
 
     .profile-pic {
-        width: 40%; /* Adjust the width of the profile picture */
-        margin-right: 2%; /* Optional margin for spacing */
+        width: 45%; /* Adjust the width of the profile picture */
+        margin-right: 1%; /* Optional margin for spacing */
     }
 
     #bio > div {
-        width: 58%; /* Adjust the width of the text box container */
+        width: 54%; /* Adjust the width of the text box container */
     }
 
     .text-box {
