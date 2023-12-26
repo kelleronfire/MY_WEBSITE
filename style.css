@@ -417,11 +417,13 @@ p2{
         flex-direction: row; /* Keep elements side by side */
         justify-content: flex-start; /* Align items to the start (left) */
         align-items: flex-start; /* Align items to the top */
+        flex-wrap:wrap;
     }
 
     .profile-pic {
         width: 45%; /* Adjust the width of the profile picture */
         margin-right: 1%; /* Optional margin for spacing */
+        margin-left:1%;
     }
 
     #bio > div {
@@ -430,6 +432,7 @@ p2{
 
     .text-box {
         /* Adjust text box styling as needed */
+        margin-left:1%;
     }
 
     #carousel {
