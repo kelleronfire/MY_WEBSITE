@@ -440,7 +440,7 @@ p2{
     #carousel {
         width: 100vw; /* Full viewport width for carousel */
         position: relative;
-        left: 70%;
+        left: 20%;
         transform: translateX(-50%);
         order: 3; /* Position carousel after the text box and image */
         margin-top: 10px; /* Adjust margin as needed */
