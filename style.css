@@ -415,24 +415,26 @@ p2{
 @media screen and (max-width: 768px) {
     #bio {
         flex-direction: row; /* Keep elements side by side */
+        flex-wrap: nowrap; /* Prevent elements from wrapping */
         justify-content: flex-start; /* Align items to the start (left) */
         align-items: flex-start; /* Align items to the top */
-        flex-wrap:wrap;
     }
 
     .profile-pic {
-        width: 45%; /* Adjust the width of the profile picture */
-        margin-right: 1%; /* Optional margin for spacing */
-        margin-left:1%;
+        width: 30%; /* Adjust the width of the profile picture */
+        margin-right: 1%; /* Small margin for spacing */
     }
 
     #bio > div {
-        width: 54%; /* Adjust the width of the text box container */
+        width: 69%; /* Adjust the width of the text box container */
+        /* Ensure it doesn't have padding or margins that could cause overflow */
+        padding: 0;
+        margin: 0;
     }
 
     .text-box {
-        /* Adjust text box styling as needed */
-        margin-left:1%;
+        width: 100%; /* Ensure the text box itself also doesn't exceed the container width */
+        /* Adjust padding or margins as needed */
     }
 
     #carousel {
@@ -440,7 +442,7 @@ p2{
         position: relative;
         left: 50%;
         transform: translateX(-50%);
-        order: 3; /* Ensure carousel is positioned after the text box and image */
+        order: 3; /* Position carousel after the text box and image */
         margin-top: 10px; /* Adjust margin as needed */
     }
 }
